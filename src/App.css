@@ -1,7 +1,8 @@
 div div button {
   height: 50px;
   width: 50px;
-  margin: 2.5px; 
+  margin: 2.5px;
+  border-radius: 15px;
 }
 
 .number {
@@ -24,6 +25,10 @@ div div button {
 
 input {
   text-align: right;
+  font-size: 52px;
   width: 224.5px;
-  margin: 2.5px;  
+  height: 75px;
+  margin: 2.5px;
+  border-radius: 5px;
+  border-color: #A9A9A9;
 }

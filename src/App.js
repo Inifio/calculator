@@ -18,6 +18,8 @@ class App extends Component {
     }
   }
 
+  
+
   handleKeypress = (e, val) => {
     let displayValueTemp = this.state.displayValue.slice();
 
@@ -35,7 +37,11 @@ class App extends Component {
     this.setState({ displayValue: displayValueTemp });
   }
 
-  clear = () => {
+  changeDisplay = (value) => {
+
+  }
+
+  clearDisplay = () => {
     this.setState({ displayValue: "0" })
   }
 
@@ -45,7 +51,7 @@ class App extends Component {
         <input className="Display" value={this.state.displayValue}></input>
 
         <div className="Keypad">
-          <div> <button className="options" onClick={this.clear}>CL</button> <button className="options">+/-</button> <button className="options">%</button> <button className="operand">/</button> </div>
+          <div> <button className="options" onClick={this.clearDisplay}>CL</button> <button className="options">+/-</button> <button className="options">%</button> <button className="operand">/</button> </div>
           <div> <button className="number" onClick={(e) => this.handleKeypress(e, 7)}>7</button> <button className="number" onClick={(e) => this.handleKeypress(e, 8)}>8</button> <button className="number" onClick={(e) => this.handleKeypress(e, 9)}>9</button> <button className="operand">X</button> </div>
           <div> <button className="number" onClick={(e) => this.handleKeypress(e, 4)}>4</button> <button className="number" onClick={(e) => this.handleKeypress(e, 5)}>5</button> <button className="number" onClick={(e) => this.handleKeypress(e, 6)}>6</button> <button className="operand">-</button> </div>
           <div> <button className="number" onClick={(e) => this.handleKeypress(e, 1)}>1</button> <button className="number" onClick={(e) => this.handleKeypress(e, 2)}>2</button> <button className="number" onClick={(e) => this.handleKeypress(e, 3)}>3</button> <button className="operand">+</button> </div>
