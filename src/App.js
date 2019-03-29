@@ -24,12 +24,10 @@ class App extends Component {
     // Input checks
     if (val == 0 && displayValueTemp == 0)
       return null;
-    
-    if (val == "." && !this.state.isDecimal) {
+    if (val == "." && !this.state.isDecimal)
       this.setState({ isDecimal: true })
-    } else if(val == "." && this.state.isDecimal) {
+    else if(val == "." && this.state.isDecimal)
       return null;
-    }
 
     displayValueTemp == 0 ? displayValueTemp = val.toString() : displayValueTemp = displayValueTemp + val;
 
@@ -44,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <input ckassName="Display" value={this.state.displayValue}></input>
+        <input className="Display" value={this.state.displayValue}></input>
 
         <div className="Keypad">
           <div> <button className="options" onClick={this.clear}>CL</button> <button className="options">+/-</button> <button className="options">%</button> <button className="operand">/</button> </div>
