@@ -21,24 +21,19 @@ class App extends Component {
   
 
   handleKeypress = (e, val) => {
-    let displayValueTemp = this.state.displayValue.slice();
-
-    // Input checks
-    if (val == 0 && displayValueTemp == 0)
-      return null;
-    if (val == "." && !this.state.isDecimal)
-      this.setState({ isDecimal: true })
-    else if(val == "." && this.state.isDecimal)
-      return null;
-
-    displayValueTemp == 0 ? displayValueTemp = val.toString() : displayValueTemp = displayValueTemp + val;
-
-    // Set States
-    this.setState({ displayValue: displayValueTemp });
+    if (!isNaN(val)) {
+      this.changeDisplay(val);
+    }
   }
 
   changeDisplay = (value) => {
+    let displayValueTemp = this.state.displayValue.slice();
 
+    if (value == 0 && displayValueTemp == 0)
+      return null;
+
+    displayValueTemp == 0 ? displayValueTemp = value.toString() : displayValueTemp = displayValueTemp + value;
+    this.setState({ displayValue: displayValueTemp })
   }
 
   clearDisplay = () => {
